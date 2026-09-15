@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat Clicker App</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS Animations -->
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body class="min-h-screen bg-amber-50 flex flex-col items-center justify-center">
+
+  <!-- Header: Judul Aplikasi -->
+  <header class="w-full text-center py-6">
+    <h1 class="text-3xl font-bold text-amber-800">🐱 Cat Clicker App</h1>
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="flex flex-col items-center justify-center gap-6 px-4 pb-8">
+
+    <!-- Cat_Display: menampilkan gambar kucing dan overlay reaksi (task 6.2) -->
+    <div id="cat-display" class="relative cursor-pointer select-none" role="button" aria-label="Klik kucing untuk mendapatkan reaksi" tabindex="0">
+      <img id="cat-image" src="https://placekitten.com/300/300" alt="Kucing lucu sedang duduk"
+           class="max-w-full rounded-2xl shadow-lg" style="min-width:100px; min-height:100px;" />
+      <div id="reaction-overlay" class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-live="polite">
+        <span id="reaction-text" class="text-5xl font-bold hidden bg-white/80 px-4 py-2 rounded-xl shadow"></span>
+      </div>
+    </div>
+
+    <!-- Click_Counter: menampilkan jumlah klik (task 6.3) -->
+    <div id="counter-display" class="text-center mt-4">
+      <span class="text-lg font-semibold text-amber-800">Jumlah Klik: </span>
+      <span class="text-3xl font-bold text-amber-900" id="counter-value">0</span>
+    </div>
+
+  </main>
+
+  <!-- Modul controller utama aplikasi (task 6.4) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
